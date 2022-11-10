@@ -1,0 +1,8 @@
+{
+    "compilerOptions": {
+        "removeComments": true,
+        "outDir": "js", // folder that the JS will output to
+        "target": "es5",
+        "watch": true // Will watch for changes to send to JS file from TS
+    }
+}
