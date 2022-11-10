@@ -1,3 +1,31 @@
+class Breed{
+    id:string;
+    name:string;
+    country_code:string;
+    bred_for:string;
+    life_span:string;
+    temperament:string;
+    origin:string;
+    reference_image_id:string;
+    weight:BreedWeight;
+    height:BreedHeight;
+    image:BreedImage;
+}
+class BreedWeight{
+    imperial: string;
+    metric: string;
+}
+class BreedHeight{
+    imperial: string;
+    metric: string;
+}
+class BreedImage {
+    id:string;
+    width:number;
+    height:number;
+    url:string;
+}
+
 function getByID(id: string) {
     return document.getElementById(id);
 }
@@ -21,5 +49,16 @@ window.onload = function(){
 function getAllBreeds(){
     fetch('https://api.thedogapi.com/v1/breeds')
     .then((response) => response.json())
-    .then((data) => console.log(data));
+    // Add datatype to "data" for the json response
+    // to get intellisense
+    .then((data:Array<Breed>) => {
+        // console.log(data);
+        for (let currIndex = 0; currIndex < data.length; currIndex++) {
+            const currBreed = data[currIndex];
+            let breedDisplay:string = "";
+            breedDisplay += `${currBreed.name} ${currBreed.image.url}`;
+            console.log(breedDisplay);
+        }
+    }
+    );
 }
