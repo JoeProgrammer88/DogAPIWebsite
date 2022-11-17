@@ -37,9 +37,9 @@ function getAllBreeds() {
         .then(function (data) {
         for (var currIndex = 0; currIndex < data.length; currIndex++) {
             var currBreed = data[currIndex];
-            var breedDisplay = "";
-            breedDisplay += "".concat(currBreed.name, " ").concat(currBreed.image.url);
-            console.log(breedDisplay);
+            var breedDisplay = "\n            <div class=\"col\">\n                <div class=\"card\">\n                    <img src=\"".concat(currBreed.image.url, "\" class=\"card-img-top\" alt=\"Image of ").concat(currBreed.name, "\">\n                    <div class=\"card-body\">\n                        <h5 class=\"card-title\">").concat(currBreed.name, "</h5>\n                        <p class=\"card-text\">Other info coming soon...</p>\n                    </div>\n                </div>\n            </div>");
+            var breedDisplayDiv = document.getElementById("breed-display");
+            breedDisplayDiv.innerHTML += breedDisplay;
         }
     });
 }
