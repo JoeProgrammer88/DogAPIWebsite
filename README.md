@@ -10,7 +10,9 @@ You need the following to run the project locally
 
 
 ## Live Website
-Check out the live website https://joeprogrammer88.github.io/DogAPIWebsite/
+Check out the live website https://joeprogrammer88.github.io/DogAPIWebsite/ 
+
+*You must click the "Get All Breeds" button to show any dogs. We did this to not overuse the API during development*
 
 ## Screenshots
 ![Website preview](images/website-preview.png)
